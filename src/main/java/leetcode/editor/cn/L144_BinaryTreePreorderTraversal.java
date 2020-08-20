@@ -52,15 +52,16 @@ class Solution {
             return;
         }
         Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while(!stack.isEmpty()){
-            TreeNode node = stack.pop();
-            ret.add(node.val);
-            if(node.right != null){
-                stack.push(node.right);
+
+        while(!stack.isEmpty() || root != null){
+            while(root != null){
+                ret.add(root.val);
+                stack.push(root);
+                root = root.left;
             }
-            if(node.left != null){
-                stack.push(node.left);
+            if(!stack.isEmpty()){
+                TreeNode pop = stack.pop();
+                root = pop.right;
             }
         }
     }

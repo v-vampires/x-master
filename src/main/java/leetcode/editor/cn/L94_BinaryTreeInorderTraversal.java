@@ -56,9 +56,12 @@ class Solution {
                 stack.push(root);
                 root = root.left;
             }
-            TreeNode node = stack.pop();
-            ret.add(node.val);
-            root = node.right;
+            if(!stack.isEmpty()){
+                TreeNode node = stack.pop();
+                ret.add(node.val);
+                root = node.right;
+            }
+
         }
     }
 }

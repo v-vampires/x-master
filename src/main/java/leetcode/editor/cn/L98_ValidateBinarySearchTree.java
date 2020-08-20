@@ -37,7 +37,8 @@ import leetcode.editor.cn.common.TreeNode;
 public class L98_ValidateBinarySearchTree{
   public static void main(String[] args) {
        Solution solution = new L98_ValidateBinarySearchTree().new Solution();
-      System.out.println(solution.isValidBST(TreeNode.of(5, 1, 4, null, null, 3, 6)));
+      System.out.println(solution.isValidBST(TreeNode.of(0x7fffffff)));
+      System.out.println(solution.isValidBST(TreeNode.of(1,1)));
   }
   
 

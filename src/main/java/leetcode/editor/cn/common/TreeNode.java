@@ -22,6 +22,19 @@ public class TreeNode {
         return TreeNode.of(Arrays.asList(data));
     }
 
+    public static TreeNode createOf(List<Integer> data){
+        if(data == null || data.size() == 0){
+            return null;
+        }
+        Integer node = data.remove(0);
+        TreeNode r = new TreeNode(node);
+        if(node!= null){
+            r.left = createOf(data);
+            r.right = createOf(data);
+        }
+        return r;
+    }
+
     public static TreeNode of(List<Integer> data) {
         if (data == null || data.size() == 0) {
             return null;
