@@ -8,6 +8,10 @@ public class ListNode {
         val = x;
     }
 
+    public ListNode(int x, ListNode next) {
+        val = x;
+        this.next = next;
+    }
     public static ListNode of(int... args) {
         ListNode dummy = new ListNode(-1);
         ListNode l = dummy;
